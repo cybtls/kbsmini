@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "page": "./components/Page/Page",
+    "my-bill":"./components/MyBill/MyBill",
+    "my-setting": "./components/MySetting/MySetting"  
+  }
+}

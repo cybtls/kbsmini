@@ -1,0 +1,4 @@
+<page id="page1" customTitleBar="{{true}}"  customTabbar="{{true}}" titleBarOptions="{{titleBarOptions}}" tabBarOptions="{{tabBarOptions}}" >
+  <my-bill slot="MyBill"></my-bill>
+  <my-setting slot="MySetting"></my-setting> 
+</page>

@@ -1,0 +1,10 @@
+<view class="kbs-tabbar-main" style='background-color:{{backgroundColor}}'>
+  <block wx:for='{{list}}' wx:key="*this">
+    <view class="tabbar-item {{index === active ? 'tabbar-item_active' : 'tabbar-item_normal'  }}  {{item.action?'tabbar-item-center':''}}"
+      data-index="{{index}}" bindtap='handleTabTap'>
+      <view class='{{item.icon}}' hover-class='tabhover'>
+      </view>
+      <view class="tabbar-item-text">{{item.text}}</view>
+    </view>
+  </block>
+</view>
