@@ -22,7 +22,6 @@ module.exports = Behavior({
     const that = this
     const prop = this.properties
     // console.log(`调试:已设置的prop`, prop)
-
     // console.log(`[异步值打印]调试prop的值:[${Date.parse(new Date())}]`, prop, `\n\n\n options值[${Date.parse(new Date())}]:`,prop.options)
     /* 这里加延时是因为一个奇怪的bug  组件外部传入的props与内部接收的时间不同步*/
     setTimeout(() => {
@@ -40,5 +39,4 @@ module.exports = Behavior({
       }
     }, 10)
   },
-  
 })

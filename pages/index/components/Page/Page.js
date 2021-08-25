@@ -1,58 +1,39 @@
-// component/Tabbar/Tabbar.js
-const BaseComponent = require("../../../../behaviors/BaseComponent")
+const BaseComponent = require("../../../../behaviors/BaseComponent")//定义了一些基础变量
 Component({
   // 混入  类似Vue的mixins
   behaviors: [BaseComponent],
   options: {
-    addGlobalClass: true,
+    // addGlobalClass: true,  //true则表示页面 wxss 样式将影响到自定义组件，但自定义组件 wxss 中指定的样式不会影响页面
     multipleSlots: true // 在组件定义时的选项中启用多slot支
   },
-  /**
-   * 组件的属性列表
-   */
   properties: {
-    customTitleBar:{
-      type:Boolean,
-      value:false,
-    },
+    // customTitleBar:{
+    //   type:Boolean,
+    //   value:false,
+    // },
     customTabbar:{
       type:Boolean,
       value:false
     },
-    titleBarOptions:Object,
+    // titleBarOptions:Object,
     tabBarOptions:{
       type:Object,
-      observer(newValue,b){
-        console.log(`调试:observer触发`, newValue,b)
+      observer(newValue){
+        console.log(`调试:observer触发`, newValue)
         this.setData({
           activePage: newValue.list[newValue.active]['page']
         })
       }
     }
   },
-
-
-  /**
-   * 组件的初始数据
-   */
   data: {
     activePage:'',
   },
-
-  /**
-   * 组件的方法列表
-   */
   methods: {
-    handleTabChange(e,o){
-      const context = e.detail
+    handleTabChange(e){
       this.setData({
-        activePage:context.page,
-       'titleBarOptions.title':context.text
-      })
-    },
-    goto(page,data){
-      this.setData({
-        activePage:page
+        activePage:e.detail.page
+      //  'titleBarOptions.title':e.detail.text
       })
     }
   },

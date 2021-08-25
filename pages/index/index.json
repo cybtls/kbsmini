@@ -1,5 +1,4 @@
 {
-  "navigationStyle": "custom",
   "usingComponents": {
     "page": "./components/Page/Page",
     "my-bill":"./components/MyBill/MyBill",
