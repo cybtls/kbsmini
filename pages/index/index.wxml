@@ -1,4 +1,7 @@
-<page id="page1" customTitleBar="{{true}}"  customTabbar="{{true}}" titleBarOptions="{{titleBarOptions}}" tabBarOptions="{{tabBarOptions}}" >
+<!-- customTitleBar="{{true}}" titleBarOptions="{{titleBarOptions}}" -->
+<page customTabbar="{{true}}" tabBarOptions="{{tabBarOptions}}">
+  <!-- 我的账单 -->
   <my-bill slot="MyBill"></my-bill>
-  <my-setting slot="MySetting"></my-setting> 
+  <!-- 我的设置 -->
+  <my-setting slot="MySetting"></my-setting>
 </page>
