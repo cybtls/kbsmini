@@ -6,9 +6,28 @@
   </view> -->
   <view class='content' style='height:calc(100vh - {{CustomBar + StatusBar}}px );'>
     <slot name="{{activePage}}"></slot>
+    <view class="ripple-main {{isShow?'filter':''}}">
+      <view class="v-content">
+        <view class="ripple" animation="{{animationData}}" hidden='{{hidden}}' style='{{myStyle}}'></view>
+      </view>
+    </view>
+    <view class='bar' hidden='{{!isShow}}'>
+      <view class='tabicon'>
+        <view class='bottom' hidden='{{!isShow}}' bindtap="closeModal">
+          <view class='navlist' wx:for='{{nav}}' wx:for-item="i" wx:for-index="d" wx:key="*this">
+            <view class='item  {{isShow?"animation-nav":""}}' style='animation-delay: {{(index+1)*0.1}}s;'
+              wx:for='{{i.navigation}}' wx:key="*this" data-item="{{item}}" catchtap="selectItem">
+              <image class="item-image" mode='widthFix' src='{{item.src}}'></image>
+              <text class='string'>{{item.name}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
   </view>
-  <view class='footer'>
-    <tabbar wx:if="{{customTabbar}}" options="{{tabBarOptions}}" bindchange="handleTabChange"></tabbar>
+  <view class='footer' style="z-index:9999">
+    <tabbar wx:if="{{customTabbar}}" options="{{tabBarOptions}}" isModal="{{isShow}}" bindchange="handleTabChange"
+      bindshowAdd="handleshowAdd"></tabbar>
     <slot name="footer"></slot>
   </view>
 </view>

@@ -3,11 +3,17 @@ const BaseComponent= require("../../behaviors/BaseComponent")
 Component({
   // 引入拓展
   behaviors: [BaseComponent],
+  options: {
+    addGlobalClass: true,
+  },
   /**
    * 组件的属性列表
    */
   properties: {
-
+    isModal:{
+      type:Boolean,
+      value:false
+    }
   },
   /**
    * 组件的初始数据
@@ -29,9 +35,13 @@ Component({
         })
         this.triggerEvent("change",{...currentTab, index})
       }else{
-
+        this.properties.isModal?this.setData({
+          menuClass:'menuClose'
+        }):this.setData({
+          menuClass:'menuOpen'
+        })
+        this.triggerEvent("showAdd",{...currentTab, index})
       }
-    
     }   
   }
 })

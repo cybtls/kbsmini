@@ -14,20 +14,18 @@ Page({
           page: 'MyBill',
           text: '账单'
         },
-        // {
-        //   icon: 'icon-add',
-        //   page: 'home',
-        //   text: '',
-        //   action: true,
-        //   actionClass: 'bg-green'
-        // },
+        {
+          icon: 'icon-add',
+          page: 'home',
+          text: '',
+          action: true
+        },
         {
           icon: 'icon-peoplefill',
           page: 'MySetting',
           text: '我的'
         },
       ],
-
     }
   },
   onLoad: function () {}
